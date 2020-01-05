@@ -31,8 +31,8 @@
   "scripts": {
     "install": "node ./install/install.js",
     "configure": "node-gyp configure",
-    "build": "node-gyp configure build --jobs max",
-    "rebuild": "node-gyp rebuild --jobs max",
+    "build": "node-gyp configure build --jobs max --target=6.1.5 --dist-url=https://electronjs.org/headers",
+    "rebuild": "node-gyp rebuild --jobs max --target=6.1.5 --dist-url=https://electronjs.org/headers",
     "clean": "node-gyp clean",
     "build-debug": "BINDINGS_DEBUG=true node ./install/install.js"
   },

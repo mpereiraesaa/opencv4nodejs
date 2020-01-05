@@ -77,7 +77,7 @@ process.env['OPENCV4NODEJS_DEFINES'] = defines.join('\n')
 process.env['OPENCV4NODEJS_INCLUDES'] = includes.join('\n')
 process.env['OPENCV4NODEJS_LIBRARIES'] = libs.join('\n')
 
-const flags = process.env.BINDINGS_DEBUG ? '--jobs max --debug' : '--jobs max'
+const flags = process.env.BINDINGS_DEBUG ? '--jobs max --debug --target=6.1.5 --dist-url=https://electronjs.org/headers' : '--jobs max --target=6.1.5 --dist-url=https://electronjs.org/headers'
 const nodegypCmd = 'node-gyp rebuild ' + flags
 log.info('install', `spawning node gyp process: ${nodegypCmd}`)
 const child = child_process.exec(nodegypCmd, { maxBuffer: Infinity }, function(err, stdout, stderr) {
